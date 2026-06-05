@@ -1,0 +1,409 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Dashboard V10</title><link rel="stylesheet" href="style-v10.css">
+
+</head>
+<body><!-- Mobile Menu -->
+<button id="menuToggle" class="menu-toggle">
+    ☰
+</button>
+
+<!-- Sidebar -->
+<aside id="sidebar" class="sidebar">
+
+    <div class="sidebar-top">
+
+        <div id="profileBtn" class="profile-preview">
+
+            <img
+                id="profilePic"
+                src=""
+                alt="Profile">
+
+            <span id="profileName">
+                User
+            </span>
+
+        </div>
+
+    </div>
+
+    <nav class="sidebar-menu">
+
+        <button class="menu-btn active" data-section="dashboard">
+            Dashboard
+        </button>
+
+        <button class="menu-btn" data-section="goals">
+            Goals
+        </button>
+
+        <button class="menu-btn" data-section="reading">
+            Reading
+        </button>
+
+        <button class="menu-btn" data-section="coding">
+            Coding
+        </button>
+
+        <button class="menu-btn" data-section="expenses">
+            Expenses
+        </button>
+
+        <button class="menu-btn" data-section="analytics">
+            Analytics
+        </button>
+
+        <button class="menu-btn" data-section="food">
+            Food Diet
+        </button>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+
+        <button id="logoutBtn">
+            Logout
+        </button>
+
+    </div>
+
+</aside>
+
+<!-- Main Content -->
+<main class="main-content">
+
+    <!-- Date Header -->
+    <section class="top-bar">
+
+        <input
+            type="date"
+            id="calendarDate">
+
+    </section>
+
+    <!-- Week Navigation -->
+    <section class="week-container">
+
+        <button id="prevDayBtn">
+            ◀
+        </button>
+
+        <div id="weekStrip" class="week-strip">
+        </div>
+
+        <button id="nextDayBtn">
+            ▶
+        </button>
+
+    </section>
+
+    <!-- Compact Widgets -->
+    <section class="quick-widgets">
+
+        <div id="liveClock" class="widget-card">
+            00:00
+        </div>
+
+        <div id="waterTracker" class="widget-card">
+
+            <div id="waterBottle">
+
+                <div id="waterFill"></div>
+
+            </div>
+
+        </div>
+
+        <button id="notesBtn" class="widget-btn">
+            📝 Notes
+        </button>
+
+        <button id="highlightsBtn" class="widget-btn">
+            ⭐ Highlights
+        </button>
+
+    </section>
+
+    <!-- Dashboard Section -->
+    <section
+        id="dashboardSection"
+        class="content-section active-section">
+
+        <div class="planner-header">
+
+            <h2>
+                Daily Planner
+            </h2>
+
+            <button id="addTaskBtn">
+                + Task
+            </button>
+
+        </div>
+
+        <div id="taskList">
+        </div>
+
+    </section>
+
+    <!-- Goals -->
+    <section
+        id="goalsSection"
+        class="content-section">
+
+        <h2>Goals</h2>
+
+        <div id="goalsContainer"></div>
+
+    </section>
+
+    <!-- Reading -->
+    <section
+        id="readingSection"
+        class="content-section">
+
+        <div class="section-header">
+
+            <h2>Reading</h2>
+
+            <button id="addReadingSubject">
+                + Subject
+            </button>
+
+        </div>
+
+        <div id="readingSubjects"></div>
+
+    </section>
+
+    <!-- Coding -->
+    <section
+        id="codingSection"
+        class="content-section">
+
+        <div class="section-header">
+
+            <h2>Coding</h2>
+
+            <button id="addCodingSubject">
+                + Subject
+            </button>
+
+        </div>
+
+        <div id="codingSubjects"></div>
+
+    </section>
+
+    <!-- Expenses -->
+    <section
+        id="expensesSection"
+        class="content-section">
+
+        <div class="section-header">
+
+            <h2>Expenses</h2>
+
+            <button id="addExpenseBtn">
+                + Expense
+            </button>
+
+        </div>
+
+        <div id="expenseContainer"></div>
+
+    </section>
+
+    <!-- Analytics -->
+    <section
+        id="analyticsSection"
+        class="content-section">
+
+    </section>
+
+    <!-- Food Diet -->
+    <section
+        id="foodSection"
+        class="content-section">
+
+        <h2>Weekly Food Diet</h2>
+
+        <div id="foodDietTable"></div>
+
+    </section>
+
+</main>
+
+<!-- TASK MODAL -->
+<div id="taskModal" class="modal">
+
+    <div class="modal-content">
+
+        <h3>Add Task</h3>
+
+        <input
+            id="taskNameInput"
+            type="text"
+            placeholder="Task Name">
+
+        <input
+            id="taskTimeInput"
+            type="time">
+
+        <button id="saveTaskModal">
+            Save
+        </button>
+
+    </div>
+
+</div>
+
+<!-- NOTES MODAL -->
+<div id="notesModal" class="modal">
+
+    <div class="modal-content">
+
+        <h3>Notes</h3>
+
+        <textarea
+            id="notesInput"></textarea>
+
+        <button id="saveNotesBtn">
+            Save
+        </button>
+
+    </div>
+
+</div>
+
+<!-- HIGHLIGHTS MODAL -->
+<div id="highlightsModal" class="modal">
+
+    <div class="modal-content">
+
+        <h3>Highlights</h3>
+
+        <textarea
+            id="highlightsInput"></textarea>
+
+        <button id="saveHighlightsBtn">
+            Save
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PROFILE MODAL -->
+<div id="profileModal" class="modal">
+
+    <div class="modal-content">
+
+        <h3>Profile</h3>
+
+        <input
+            id="firstName"
+            type="text"
+            placeholder="First Name">
+
+        <input
+            id="lastName"
+            type="text"
+            placeholder="Last Name">
+
+        <input
+            id="nickName"
+            type="text"
+            placeholder="Nick Name">
+
+        <input
+            id="profileEmail"
+            type="email"
+            placeholder="Email">
+
+        <input
+            id="profileImageInput"
+            type="file">
+
+        <input
+            id="backgroundImageInput"
+            type="file">
+
+        <button id="saveProfileBtn">
+            Save Profile
+        </button>
+
+    </div>
+
+</div>
+<!-- EXPENSE MODAL -->
+<div id="expenseModal" class="modal">
+
+    <div class="modal-content">
+
+        <h3>Add Expense</h3>
+
+        <input
+            id="expenseTitleInput"
+            type="text"
+            placeholder="Expense Name">
+
+        <input
+            id="expenseAmountInput"
+            type="number"
+            placeholder="Amount">
+
+        <button id="saveExpenseBtn">
+            Save Expense
+        </button>
+
+    </div>
+
+</div>
+<!-- READING SUBJECT MODAL -->
+<div id="readingModal" class="modal">
+
+    <div class="modal-content">
+
+        <h3>Add Reading Subject</h3>
+
+        <input
+            id="readingSubjectInput"
+            type="text"
+            placeholder="Subject Name">
+
+        <button id="saveReadingSubjectBtn">
+            Save Subject
+        </button>
+
+    </div>
+
+</div>
+
+<!-- CODING SUBJECT MODAL -->
+<div id="codingModal" class="modal">
+
+    <div class="modal-content">
+
+        <h3>Add Coding Subject</h3>
+
+        <input
+            id="codingSubjectInput"
+            type="text"
+            placeholder="Subject Name">
+
+        <button id="saveCodingSubjectBtn">
+            Save Subject
+        </button>
+
+    </div>
+
+</div>
+
+<script src="app-v10.js"></script>
+
+</body>
+</html>

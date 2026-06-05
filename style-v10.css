@@ -1,0 +1,505 @@
+/* =========================
+RESET
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+:root{
+--bg:#0f172a;
+--card:#1e293b;
+--card2:#334155;
+--text:#f8fafc;
+--accent:#38bdf8;
+--success:#22c55e;
+--danger:#ef4444;
+--border:rgba(255,255,255,.08);
+}
+
+body{
+font-family:Segoe UI,sans-serif;
+background:var(--bg);
+color:var(--text);
+min-height:100vh;
+overflow-x:hidden;
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
+
+/* =========================
+LOGIN / REGISTER
+========================= */
+
+.auth-page{
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px;
+}
+
+.auth-container{
+width:100%;
+max-width:420px;
+}
+
+.auth-card{
+background:rgba(30,41,59,.92);
+backdrop-filter:blur(10px);
+border:1px solid var(--border);
+border-radius:20px;
+padding:30px;
+}
+
+.auth-card h1{
+text-align:center;
+margin-bottom:10px;
+}
+
+.auth-subtitle{
+text-align:center;
+opacity:.8;
+margin-bottom:25px;
+}
+
+.input-group{
+margin-bottom:18px;
+}
+
+.input-group label{
+display:block;
+margin-bottom:8px;
+}
+
+.input-group input{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+background:#0f172a;
+color:white;
+}
+
+.primary-btn{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+background:var(--accent);
+color:white;
+font-weight:bold;
+}
+
+.switch-page{
+text-align:center;
+margin-top:15px;
+}
+
+.switch-page a{
+color:var(--accent);
+text-decoration:none;
+}
+
+/* =========================
+MENU BUTTON
+========================= */
+
+.menu-toggle{
+position:fixed;
+top:15px;
+left:15px;
+z-index:1001;
+border:none;
+border-radius:10px;
+padding:10px 14px;
+cursor:pointer;
+display:none;
+}
+
+/* =========================
+SIDEBAR
+========================= */
+
+.sidebar{
+width:260px;
+height:100vh;
+position:fixed;
+left:0;
+top:0;
+background:rgba(15,23,42,.95);
+backdrop-filter:blur(12px);
+border-right:1px solid var(--border);
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+z-index:1000;
+}
+
+.sidebar-top{
+padding:20px;
+}
+
+.profile-preview{
+text-align:center;
+cursor:pointer;
+}
+
+.profile-preview img{
+width:90px;
+height:90px;
+border-radius:50%;
+object-fit:cover;
+background:#1e293b;
+}
+
+.profile-preview span{
+display:block;
+margin-top:10px;
+}
+
+.sidebar-menu{
+display:flex;
+flex-direction:column;
+gap:10px;
+padding:20px;
+}
+
+.menu-btn{
+padding:12px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+background:var(--card);
+color:white;
+}
+
+.menu-btn.active{
+background:var(--accent);
+}
+
+.sidebar-bottom{
+padding:20px;
+}
+
+#logoutBtn{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+background:var(--danger);
+color:white;
+cursor:pointer;
+}
+
+/* =========================
+MAIN
+========================= */
+
+.main-content{
+margin-left:260px;
+padding:20px;
+}
+
+/* =========================
+DATE
+========================= */
+
+.top-bar{
+margin-bottom:15px;
+}
+
+#calendarDate{
+padding:10px;
+border:none;
+border-radius:10px;
+}
+
+/* =========================
+WEEK
+========================= */
+
+.week-container{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:18px;
+}
+
+.week-container button{
+border:none;
+border-radius:10px;
+padding:10px 15px;
+cursor:pointer;
+}
+
+.week-strip{
+flex:1;
+display:flex;
+gap:8px;
+overflow-x:auto;
+}
+
+.week-day{
+min-width:80px;
+text-align:center;
+padding:10px;
+border-radius:10px;
+background:var(--card);
+cursor:pointer;
+}
+
+.week-day.active{
+background:var(--accent);
+}
+
+/* =========================
+QUICK WIDGETS
+========================= */
+
+.quick-widgets{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+margin-bottom:20px;
+}
+
+.widget-card{
+background:var(--card);
+border-radius:12px;
+padding:12px;
+}
+
+#liveClock{
+min-width:140px;
+text-align:center;
+font-size:1.2rem;
+font-weight:bold;
+}
+
+#waterTracker{
+width:70px;
+display:flex;
+justify-content:center;
+}
+
+#waterBottle{
+width:24px;
+height:70px;
+border:2px solid white;
+border-radius:12px;
+position:relative;
+overflow:hidden;
+}
+
+#waterFill{
+position:absolute;
+bottom:0;
+width:100%;
+height:0%;
+background:var(--accent);
+transition:.3s;
+}
+
+.widget-btn{
+border:none;
+border-radius:12px;
+padding:12px 16px;
+background:var(--card);
+color:white;
+cursor:pointer;
+}
+
+/* =========================
+SECTIONS
+========================= */
+
+.content-section{
+display:none;
+}
+
+.active-section{
+display:block;
+}
+
+.section-header,
+.planner-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:15px;
+}
+
+.section-header button,
+.planner-header button{
+border:none;
+border-radius:10px;
+padding:10px 14px;
+cursor:pointer;
+background:var(--accent);
+color:white;
+}
+
+/* =========================
+TASKS
+========================= */
+
+#taskList{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.task-card{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:var(--card);
+padding:12px;
+border-radius:12px;
+}
+
+.task-left{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.task-status{
+width:28px;
+height:28px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:bold;
+cursor:pointer;
+}
+
+.task-pending{
+background:var(--danger);
+}
+
+.task-done{
+background:var(--success);
+}
+
+.task-name{
+font-weight:700;
+cursor:pointer;
+}
+
+.task-time{
+opacity:.8;
+font-size:.9rem;
+}
+
+.delete-task{
+border:none;
+background:transparent;
+color:var(--danger);
+cursor:pointer;
+}
+
+/* =========================
+MODAL
+========================= */
+
+.modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.6);
+z-index:2000;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.modal.show{
+display:flex;
+}
+
+.modal-content{
+width:100%;
+max-width:500px;
+background:var(--card);
+border-radius:16px;
+padding:20px;
+}
+
+.modal-content h3{
+margin-bottom:15px;
+}
+
+.modal-content input,
+.modal-content textarea{
+width:100%;
+padding:12px;
+margin-bottom:12px;
+border:none;
+border-radius:10px;
+background:#0f172a;
+color:white;
+}
+
+.modal-content textarea{
+min-height:180px;
+resize:vertical;
+}
+
+.modal-content button{
+width:100%;
+border:none;
+border-radius:10px;
+padding:12px;
+background:var(--accent);
+color:white;
+cursor:pointer;
+}
+
+/* =========================
+FOOD DIET
+========================= */
+
+#foodDietTable{
+overflow-x:auto;
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:768px){
+
+.menu-toggle{
+    display:block;
+}
+
+.sidebar{
+    left:-260px;
+    transition:.3s;
+}
+
+.sidebar.open{
+    left:0;
+}
+
+.main-content{
+    margin-left:0;
+    padding-top:70px;
+}
+
+.quick-widgets{
+    flex-wrap:wrap;
+}
+
+#liveClock{
+    flex:1;
+}
+
+}
