@@ -56,7 +56,7 @@ if (registerForm) {
         alert("Registration Successful");
 
         window.location.href =
-            "index-v10.html";
+            "index.html";
 
     });
 
@@ -103,7 +103,7 @@ if (loginForm) {
             );
 
             window.location.href =
-                "dashboard-v10.html";
+                "dashboard.html";
 
         } else {
 
@@ -123,7 +123,7 @@ if (loginForm) {
 
 const isDashboard =
     window.location.pathname
-    .includes("dashboard-v10.html");
+    .includes("dashboard.html");
 
 if (isDashboard) {
 
@@ -135,7 +135,7 @@ if (isDashboard) {
     if (loggedIn !== "true") {
 
         window.location.href =
-            "index-v10.html";
+            "index.html";
 
     }
 
@@ -159,7 +159,7 @@ if (logoutBtn) {
             );
 
             window.location.href =
-                "index-v10.html";
+                "index.html";
 
         }
     );
